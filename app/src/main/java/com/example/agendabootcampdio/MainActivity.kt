@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btnSetEvent = findViewById(R.id.set_event) as Button
+        val btnContact = findViewById(R.id.contact) as Button
         btnSetEvent.setOnClickListener {
 
             val intent = Intent(Intent.ACTION_INSERT)
@@ -23,6 +24,11 @@ class MainActivity : AppCompatActivity() {
                 .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, System.currentTimeMillis() + (60*60*1000))
             startActivity(intent)
 
+        }
+
+        btnContact.setOnClickListener {
+            val intent = Intent(this, ContactActivity::class.java)
+            startActivity(intent)
         }
 
     }
