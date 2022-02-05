@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         val btnSetEvent = findViewById(R.id.set_event) as Button
         val btnContact = findViewById(R.id.contact) as Button
+        val btnFotos = findViewById(R.id.fotos) as Button
         btnSetEvent.setOnClickListener {
 
             val intent = Intent(Intent.ACTION_INSERT)
@@ -28,6 +29,11 @@ class MainActivity : AppCompatActivity() {
 
         btnContact.setOnClickListener {
             val intent = Intent(this, ContactActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnFotos.setOnClickListener {
+            val intent = Intent(this, FotosActivity::class.java)
             startActivity(intent)
         }
 
