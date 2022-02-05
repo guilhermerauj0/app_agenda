@@ -1,6 +1,7 @@
 package com.example.agendabootcampdio
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -21,11 +22,11 @@ class FotosActivity : AppCompatActivity() {
                     val permission = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
                     requestPermissions(permission, PERMISSION_CODE)
                 }else{
-                    pickImageFromGalery()
+                    pickImageFromGallery()
                 }
 
             }else{
-                pickImageFromGalery()
+                pickImageFromGallery()
 
             }
         }
@@ -36,14 +37,30 @@ class FotosActivity : AppCompatActivity() {
         permissions: Array<out String>,
         grantResults: IntArray
     ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when(requestCode){
             PERMISSION_CODE -> {
                 if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                    pickImageFromGalery()
+                    pickImageFromGallery()
                 }else{
                     Toast.makeText(this, "Permissão Negada", Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+    }
+
+    private fun pickImageFromGallery() {
+        /* ABRIR GALERIA */
+        val intent = Intent(Intent.ACTION_PICK) // intenção de pegar imagem
+        intent.type = "image/+"
+        startActivityForResult(intent, IMAGE_PICK_CODE)
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK && requestCode == IMAGE_PICK_CODE){
+            image_view.setImageURI(data?.data)
         }
     }
 
