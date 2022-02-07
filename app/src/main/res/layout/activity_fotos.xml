@@ -8,12 +8,12 @@
     tools:context=".FotosActivity">
 
     <ImageView
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="370dp"
+        android:layout_height="370dp"
         android:id="@+id/image_view"
         android:scaleType="centerCrop"
         android:src="@drawable/image"
-        android:contentDescription="@string/selected_image"/>
+        android:contentDescription="@string/selected_image" />
 
     <Button
         android:layout_width="match_parent"
@@ -22,7 +22,18 @@
         android:layout_margin="16dp"
         android:id="@+id/pick_button"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:text="@string/image_selected"/>
+        android:text="@string/image_selected" />
+
+    <Button
+        android:id="@+id/open_camera_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:padding="10dp"
+        android:text="@string/tirar_uma_foto"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
 
 
 </LinearLayout>
