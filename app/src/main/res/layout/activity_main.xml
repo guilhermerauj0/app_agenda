@@ -28,6 +28,13 @@
         android:text="Fotos"
         android:layout_margin="20dp"
         android:padding="10dp"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mapa"
+        android:text="Abrir Mapa"
+        android:layout_margin="20dp"
+        android:padding="10dp"/>
 
 
 </LinearLayout>

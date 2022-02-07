@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         val btnSetEvent = findViewById(R.id.set_event) as Button
         val btnContact = findViewById(R.id.contact) as Button
         val btnFotos = findViewById(R.id.fotos) as Button
+        val btnMapa = findViewById(R.id.mapa) as Button
         btnSetEvent.setOnClickListener {
 
             val intent = Intent(Intent.ACTION_INSERT)
@@ -35,6 +36,11 @@ class MainActivity : AppCompatActivity() {
 
         btnFotos.setOnClickListener {
             val intent = Intent(this, FotosActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnMapa.setOnClickListener {
+            val intent = Intent(this, MapsActivity::class.java)
             startActivity(intent)
         }
 
