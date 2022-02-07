@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.provider.CalendarContract
 import android.provider.CalendarContract.Events.* // importando todos os eventos do CALENDAR CONTRACTS
 import android.widget.Button
+import com.example.agendabootcampdio.contact.ContactActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

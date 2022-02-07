@@ -16,7 +16,7 @@
             android:name=".FotosActivity"
             android:exported="false" />
         <activity
-            android:name=".ContactActivity"
+            android:name=".contact.ContactActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

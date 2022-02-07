@@ -1,4 +1,4 @@
-package com.example.agendabootcampdio
+package com.example.agendabootcampdio.contact
 
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
@@ -8,6 +8,8 @@ import android.provider.ContactsContract
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.agendabootcampdio.ContactsAdapter
+import com.example.agendabootcampdio.R
 
 class ContactActivity : AppCompatActivity() {
     val REQUEST_CONTACT = 1
@@ -45,10 +47,12 @@ class ContactActivity : AppCompatActivity() {
 
         if(cursor != null){
             while(cursor.moveToNext()){
-                contactList.add(Contact(
+                contactList.add(
+                    Contact(
                     cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)),
                     cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
-                    ))
+                    )
+                )
             }
             cursor.close()
         }
