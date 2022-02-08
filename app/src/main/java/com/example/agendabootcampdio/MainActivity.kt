@@ -1,11 +1,11 @@
 package com.example.agendabootcampdio
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.CalendarContract
-import android.provider.CalendarContract.Events.* // importando todos os eventos do CALENDAR CONTRACTS
+import android.provider.CalendarContract.Events.*
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import com.example.agendabootcampdio.contact.ContactActivity
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         val btnSetEvent = findViewById(R.id.set_event) as Button
         val btnContact = findViewById(R.id.contact) as Button
         val btnFotos = findViewById(R.id.fotos) as Button
-        val btnMapa = findViewById(R.id.mapa) as Button
         btnSetEvent.setOnClickListener {
 
             val intent = Intent(Intent.ACTION_INSERT)
@@ -36,11 +35,6 @@ class MainActivity : AppCompatActivity() {
 
         btnFotos.setOnClickListener {
             val intent = Intent(this, FotosActivity::class.java)
-            startActivity(intent)
-        }
-
-        btnMapa.setOnClickListener {
-            val intent = Intent(this, MapsActivity::class.java)
             startActivity(intent)
         }
 
